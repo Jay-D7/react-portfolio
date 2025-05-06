@@ -1,0 +1,8 @@
+{
+  "files.exclude": {
+    "\"**/.git\": false": true,
+    "**/.git": false
+  },
+  "editor.cursorStyle": "line",
+  "editor.wordWrap": "on"
+}
