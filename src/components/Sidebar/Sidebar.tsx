@@ -20,12 +20,22 @@ const Sidebar = () => {
     }`;
   };
 
-  // const navLinks = [
-  //   { to: '/', icon: faHome, label:'', className:''}
-  //   { to: '/about', icon: faHome, label:'', className:''}
-  //   { to: '/portfolio', icon: faHome, label:'', className:''}
-  //   { to: '/contact', icon: faHome, label:'', className:''}
-  // ]
+  const navLinks = [
+    { to: '/', icon: faHome, label: 'Home', className: '/' },
+    { to: '/about', icon: faUser, label: 'About', className: 'about-link' },
+    {
+      to: '/portfolio',
+      icon: faSuitcase,
+      label: 'Portfolio',
+      className: 'portfolio-link',
+    },
+    {
+      to: '/contact',
+      icon: faEnvelope,
+      label: 'Contact',
+      className: 'contact-link',
+    },
+  ];
 
   return (
     <div className={classes.NavBar}>
@@ -38,36 +48,16 @@ const Sidebar = () => {
         />
       </Link>
       <nav className={classes.showNav}>
-        <NavLink
-          className={(props) => getNavLinkClass(props.isActive, '/')}
-          end
-          to="/"
-        >
-          <FontAwesomeIcon icon={faHome} aria-label="Home" />
-        </NavLink>
-        <NavLink
-          className={(props) => getNavLinkClass(props.isActive, 'about-link')}
-          end
-          to="/about"
-        >
-          <FontAwesomeIcon icon={faUser} aria-label="About" />
-        </NavLink>
-        <NavLink
-          className={(props) =>
-            getNavLinkClass(props.isActive, 'portfolio-link')
-          }
-          end
-          to="/portfolio"
-        >
-          <FontAwesomeIcon icon={faSuitcase} aria-label="Portfolio" />
-        </NavLink>
-        <NavLink
-          className={(props) => getNavLinkClass(props.isActive, 'contact-link')}
-          end
-          to="/contact"
-        >
-          <FontAwesomeIcon icon={faEnvelope} aria-label="Contact" />
-        </NavLink>
+        {navLinks.map(({ to, icon, label, className }) => (
+          <NavLink
+            key={to}
+            className={({ isActive }) => getNavLinkClass(isActive, className)}
+            end
+            to={to}
+          >
+            <FontAwesomeIcon icon={icon} aria-label={label} />
+          </NavLink>
+        ))}
       </nav>
     </div>
   );
