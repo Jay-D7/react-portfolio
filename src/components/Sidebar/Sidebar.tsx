@@ -12,6 +12,12 @@ import {
   // faBars,
   // faClose,
 } from '@fortawesome/free-solid-svg-icons';
+import {
+  faGithub,
+  faLinkedin,
+  faSlack,
+  faYoutube,
+} from '@fortawesome/free-brands-svg-icons';
 
 const Sidebar = () => {
   const getNavLinkClass = (isActive: boolean, baseClass: string) => {
@@ -20,6 +26,7 @@ const Sidebar = () => {
     }`;
   };
 
+  // NavLinks
   const navLinks = [
     { to: '/', icon: faHome, label: 'Home', className: '/' },
     { to: '/about', icon: faUser, label: 'About', className: 'about-link' },
@@ -37,6 +44,30 @@ const Sidebar = () => {
     },
   ];
 
+  //SocialLinks
+  const socialLinks = [
+    {
+      href: 'https://www.linkedin.com',
+      icon: faLinkedin,
+      label: 'LinkedIn',
+    },
+    {
+      href: 'https://github.com/Jay-D7',
+      icon: faGithub,
+      label: 'GitHub',
+    },
+    {
+      href: 'https://www.youtube.com',
+      icon: faYoutube,
+      label: 'YouTube',
+    },
+    {
+      href: 'https://mr-robot-network.slack.com',
+      icon: faSlack,
+      label: 'Slack',
+    },
+  ];
+
   return (
     <div className={classes.NavBar}>
       <Link className={classes.logo} to="/">
@@ -47,6 +78,8 @@ const Sidebar = () => {
           alt="Company Signature JD"
         />
       </Link>
+
+      {/* Nav */}
       <nav className={classes.showNav}>
         {navLinks.map(({ to, icon, label, className }) => (
           <NavLink
@@ -59,6 +92,26 @@ const Sidebar = () => {
           </NavLink>
         ))}
       </nav>
+
+      {/* SocialLinks */}
+      <ul className={classes.socialLinks}>
+        {socialLinks.map(({ href, icon, label }) => (
+          <li key={label}>
+            <a
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={label}
+              title={label}
+            >
+              <FontAwesomeIcon
+                icon={icon}
+                className={classes.anchorIcon}
+              ></FontAwesomeIcon>
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

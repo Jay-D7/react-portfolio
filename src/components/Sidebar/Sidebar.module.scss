@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   width: 165px;
   height: 100vh;
   min-height: 500px;
@@ -29,7 +30,6 @@
 
   nav {
     width: 100%;
-    margin-top: 120px;
     display: block;
     text-align: center;
 
@@ -42,13 +42,99 @@
       position: relative;
       text-decoration: none;
 
-      &:hover {
-        color: variables.$hover-color;
-        background-color: variables.$background-color-light;
+      svg {
+        -webkit-transition: all 0.6s ease-out;
+        transition: all 0.6s ease-out;
       }
 
       i {
         transition: all 0.3s ease-out;
+      }
+
+      &:hover {
+        color: variables.$hover-color;
+        background-color: variables.$background-color-light;
+
+        svg {
+          opacity: 0;
+          -webkit-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+        }
+
+        &:after {
+          opacity: 1;
+        }
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        font-size: 14px;
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: 2px;
+        opacity: 0;
+        -webkit-transition: all 0.6s ease-out;
+        transition: all 0.6s ease-out;
+      }
+
+      &:first-child {
+        &::after {
+          content: 'HOME';
+        }
+      }
+
+      &.about-link {
+        &:after {
+          content: 'ABOUT';
+        }
+      }
+
+      &.contact-link {
+        &:after {
+          content: 'CONTACT';
+        }
+      }
+
+      &.portfolio-link {
+        &:after {
+          content: 'PORTFOLIO';
+        }
+      }
+
+      &.active {
+        svg {
+          color: variables.$hover-color;
+        }
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+
+    li {
+      a {
+        padding: 7px 0;
+        display: block;
+        font-size: 22px;
+        line-height: 16px;
+        color: variables.$primary-color;
+
+        &:hover {
+          color: variables.$secondary-color;
+          transition: all 0.3s ease-out;
+        }
       }
     }
   }
