@@ -7,7 +7,7 @@
   width: 165px;
   height: 100vh;
   min-height: 500px;
-  background-color: #18181852;
+  background-color: variables.$background-color-dark;
   z-index: 3;
 
   .logo {
@@ -35,7 +35,7 @@
 
     a {
       font-size: 22px;
-      color: variables.$gold-color;
+      color: variables.$primary-color;
       display: block;
       line-height: 51px;
       height: 51px;
@@ -43,7 +43,7 @@
       text-decoration: none;
 
       &:hover {
-        color: variables.$primary-color;
+        color: variables.$hover-color;
         background-color: variables.$background-color-light;
       }
 
