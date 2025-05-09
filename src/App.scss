@@ -1,5 +1,10 @@
 @import 'animate.css';
 
+.App {
+  display: flex;
+  height: 100vh;
+}
+
 @font-face {
   font-family: 'Helvetica Neue';
   src: url('./assets/fonts/helvetica-neu.ttf') format('ttf');
