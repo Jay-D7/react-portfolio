@@ -1,5 +1,8 @@
+@import 'animate.css';
+
 // COLORS
 $primary-color: #cc9b57;
+$primary-dark: rgba(204, 155, 87, 0.8);
 $secondary-color: #4d4d4e;
 $hover-color: #ffd700;
 $background-color: #18181852;
@@ -13,3 +16,22 @@ $font-color-light: #d9d9d9;
 $font-color-dark: #000000;
 $font-color-secondary: #4d4d4e;
 $font-color-secondary-light: #b3b3b3;
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -8,7 +8,8 @@ const Layout = () => {
       <Sidebar />
       <div className={classes.page}>
         <span className={`${classes.tags} ${classes.topTags}`}>
-          &lt;body&gt;
+          <span>&lt;/html&gt;</span>
+          <span className={classes.bottomTagHtml}>&lt;body&gt;</span>
         </span>
 
         <Outlet />
