@@ -1,8 +1,26 @@
+import { Outlet } from 'react-router-dom';
 import Sidebar from '../Sidebar/Sidebar';
-import './Layout.module.scss';
+import classes from './Layout.module.scss';
 
 const Layout = () => {
-  return <Sidebar></Sidebar>;
+  return (
+    <div className="App">
+      <Sidebar />
+      <div className={classes.page}>
+        <span className={`${classes.tags} ${classes.topTags}`}>
+          <span>&lt;/html&gt;</span>
+          <span className={classes.bottomTagHtml}>&lt;body&gt;</span>
+        </span>
+
+        <Outlet />
+
+        <span className={`${classes.tags} ${classes.bottomTags}`}>
+          <span className={classes.bottomTagHtml}>&lt;/body&gt;</span>
+          <span>&lt;/html&gt;</span>
+        </span>
+      </div>
+    </div>
+  );
 };
 
 export default Layout;

@@ -1,0 +1,41 @@
+@import 'animate.css';
+
+.container {
+  width: 100%;
+  will-change: contents;
+  opacity: 0;
+  margin: 0 auto;
+  z-index: 1;
+  transform-style: preserve-3d;
+  animation: fadeIn 1s forwards;
+  animation-delay: 1s;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 20px;
+
+  .tags {
+    display: grid;
+    color: #ffd700;
+    opacity: 0.6;
+    font-size: 18px;
+    font-family: 'La Belle Aurore', cursive;
+  }
+
+  .topTags {
+    bottom: auto;
+    top: 35px;
+  }
+
+  .bottomTags {
+    margin-right: 20px;
+  }
+
+  .bottomTagHtml {
+    margin-left: 20px;
+  }
+}
