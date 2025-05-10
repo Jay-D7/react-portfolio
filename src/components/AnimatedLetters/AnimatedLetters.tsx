@@ -1,4 +1,5 @@
 import './AnimatedLetters.module.scss';
+
 // import styles from './AnimatedLetters.module.scss';
 
 //Define the props interface

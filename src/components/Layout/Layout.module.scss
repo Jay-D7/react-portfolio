@@ -1,4 +1,5 @@
-@import 'animate.css';
+@use '../../styles/abstracts/variables';
+@import url('animate.css');
 
 .container {
   width: 100%;
@@ -37,5 +38,142 @@
 
   .bottomTagHtml {
     margin-left: 20px;
+  }
+}
+
+.container.aboutPage {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* width: 100%; */
+  justify-content: flex-start;
+  overflow: hidden;
+
+  .textZone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+    margin-left: 50px;
+    vertical-align: middle;
+
+    h1 {
+      position: relative;
+      left: -10px;
+      margin-top: 0;
+      margin-bottom: 40px;
+      font-family: 'Coolvetica';
+      font-size: 53px;
+      font-weight: 400;
+      color: variables.$primary-color;
+
+      &:before {
+        content: '<h1>';
+        position: absolute;
+        left: -10px;
+        margin-top: -10px;
+        font-family: 'La Belle Aurore', cursive;
+        font-size: 18px;
+        color: #ffd700;
+        line-height: 18px;
+        opacity: 0.6;
+      }
+
+      &:after {
+        content: '<h1/>';
+        position: absolute;
+        left: -30px;
+        bottom: -20px;
+        margin-left: 20px;
+        font-family: 'La Belle Aurore', cursive;
+        font-size: 18px;
+        color: #ffd700;
+        line-height: 18px;
+        opacity: 0.6;
+      }
+    }
+
+    p {
+      max-width: 70%;
+      font-family: sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: variables.$primary-color;
+      animation: pulse 1s;
+
+      &:nth-of-type(1) {
+        animation-delay: 1.1s;
+      }
+      &:nth-of-type(2) {
+        animation-delay: 1.2s;
+      }
+      &:nth-of-type(3) {
+        animation-delay: 1.3s;
+      }
+    }
+  }
+
+  .textAnimateHover {
+    min-width: 10px;
+    display: inline-block;
+    animation-fill-mode: both;
+
+    &:hover {
+      animation: rubberBand 0.8s ease-in-out;
+      color: #ffd700;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .page {
+    position: initial;
+  }
+
+  .container {
+    position: initial;
+    height: auto;
+    min-height: auto;
+
+    &.contact-page,
+    &.about-page,
+    &.portfolio-page {
+      .textZone {
+        position: initial;
+        transform: none;
+        width: 100%;
+        display: block;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+    }
+
+    &.portfolio-page {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+
+      h1.page-title {
+        margin-left: 20px;
+        margin-top: 20px;
+      }
+
+      .image-box {
+        height: 200px;
+        max-width: calc(50% - 10px);
+      }
+    }
+  }
+
+  .stage-cube-cont {
+    position: initial;
+    width: 100%;
+    height: 0%;
+    overflow: visible;
   }
 }

@@ -19,7 +19,7 @@ import {
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 
-const Sidebar = () => {
+export const Sidebar = () => {
   const getNavLinkClass = (isActive: boolean, baseClass: string) => {
     return `${isActive ? classes.isActive + ' ' : ''}${
       classes[baseClass] || baseClass
@@ -116,4 +116,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+// export default Sidebar;

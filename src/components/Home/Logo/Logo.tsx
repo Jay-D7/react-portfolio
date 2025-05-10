@@ -4,7 +4,7 @@ import DrawSVGPlugin from 'gsap-trial/DrawSVGPlugin';
 import LogoS from '../../../assets/images/logo_jd_small.png';
 import classes from './Logo.module.scss';
 
-const Logo = () => {
+export const Logo = () => {
   const bgRef = useRef<HTMLDivElement | null>(null);
   const outlineLogoRef = useRef<SVGPathElement | null>(null);
   const solidLogoRef = useRef<HTMLImageElement | null>(null);
@@ -48,4 +48,4 @@ const Logo = () => {
   );
 };
 
-export default Logo;
+// export default Logo;

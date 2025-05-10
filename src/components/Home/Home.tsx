@@ -1,30 +1,19 @@
 import classes from './Home.module.scss';
 import styles from '../AnimatedLetters/AnimatedLetters.module.scss';
-import Logo from './Logo/Logo';
 import logoTitle from '../../assets/images/logo_jd_small.png';
+import { Logo } from './Logo/Logo';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { AnimatedLetters } from '../AnimatedLetters/AnimatedLetters';
 
-const Home = () => {
+export const Home = () => {
   const [letterClass, setLetterClass] = useState(styles.textAnimate);
-  const nameArray = ['a', 'c', 'o', 'b'];
-  const jobArray = [
-    'w',
-    'e',
-    'b',
-    ' ',
-    'd',
-    'e',
-    'v',
-    'e',
-    'l',
-    'o',
-    'p',
-    'e',
-    'r',
-    '.',
-  ];
+
+  const nameArray = `acob`;
+  const strNameArray = [...nameArray];
+
+  const jobArray = `web developer`;
+  const strJobArray = [...jobArray];
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -46,13 +35,13 @@ const Home = () => {
           <img src={logoTitle} alt="developer" />
           <AnimatedLetters
             letterClass={letterClass}
-            strArray={nameArray}
+            strArray={strNameArray}
             idx={15}
           />
           <br />
           <AnimatedLetters
             letterClass={letterClass}
-            strArray={jobArray}
+            strArray={strJobArray}
             idx={22}
           />
         </h1>
@@ -67,4 +56,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+// export default Home;

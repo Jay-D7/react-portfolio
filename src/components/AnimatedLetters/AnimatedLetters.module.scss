@@ -22,3 +22,9 @@
     color: #ffd700;
   }
 }
+
+// @for $i from 1 through 35 {
+//   .textAnimate._#{$i} {
+//     animation-delay: #{math.div($i, 10)}s;
+//   }
+// }
