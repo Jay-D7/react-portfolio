@@ -1,12 +1,12 @@
 import classes from './Home.module.scss';
 import styles from '../AnimatedLetters/AnimatedLetters.module.scss';
-import Logo from './Logo/Logo';
 import logoTitle from '../../assets/images/logo_jd_small.png';
+import { Logo } from './Logo/Logo';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { AnimatedLetters } from '../AnimatedLetters/AnimatedLetters';
 
-const Home = () => {
+export const Home = () => {
   const [letterClass, setLetterClass] = useState(styles.textAnimate);
   const nameArray = ['a', 'c', 'o', 'b'];
   const jobArray = [
@@ -67,4 +67,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+// export default Home;
