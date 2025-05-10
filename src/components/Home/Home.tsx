@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom';
-import logoTitle from '../../assets/images/logo_jd_small.png';
 import classes from './Home.module.scss';
 import styles from '../AnimatedLetters/AnimatedLetters.module.scss';
+import Logo from './Logo/Logo';
+import logoTitle from '../../assets/images/logo_jd_small.png';
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { AnimatedLetters } from '../AnimatedLetters/AnimatedLetters';
 
@@ -60,6 +61,8 @@ const Home = () => {
           Contact Me
         </Link>
       </div>
+      <div></div>
+      <Logo />
     </div>
   );
 };
