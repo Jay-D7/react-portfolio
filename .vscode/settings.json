@@ -1,0 +1,14 @@
+{
+  "files.exclude": {
+    "\"**/.git\": false": true,
+    "**/.git": false
+  },
+  "editor.cursorStyle": "line",
+  "editor.wordWrap": "on",
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  }
+}
